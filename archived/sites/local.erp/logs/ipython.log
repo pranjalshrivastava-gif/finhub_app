@@ -1,0 +1,100 @@
+2026-05-05 13:33:01,141 INFO ipython === bench console session ===
+2026-05-05 13:33:01,141 INFO ipython import frappe
+2026-05-05 13:33:01,141 INFO ipython === session end ===
+2026-05-05 13:33:40,318 INFO ipython === bench console session ===
+2026-05-05 13:33:40,318 INFO ipython import frappe
+2026-05-05 13:33:40,318 INFO ipython === session end ===
+2026-05-06 12:52:53,252 INFO ipython === bench console session ===
+2026-05-06 12:52:53,253 INFO ipython # Force setup complete in System Settings
+frappe.db.set_value("System Settings", "System Settings", "setup_complete", 1)
+
+# Force the global default
+frappe.db.set_default("desktop:setup_complete", "1")
+
+# Create a dummy company (Wizard usually fails because this is missing)
+if not frappe.db.exists("Company", "My Company"):
+    from erpnext.setup.setup_wizard.sample_data import setup_company
+    setup_company("My Company", "USD")
+
+# Commit changes and exit
+frappe.db.commit()
+exit()
+2026-05-06 12:52:53,253 INFO ipython # Force setup complete in System Settings
+frappe.db.set_value("System Settings", "System Settings", "setup_complete", 1)
+
+# Force the global default
+frappe.db.set_default("desktop:setup_complete", "1")
+
+# Create a dummy company (Wizard usually fails because this is missing)
+if not frappe.db.exists("Company", "My Company"):
+    from erpnext.setup.setup_wizard.sample_data import setup_company
+    setup_company("My Company", "USD")
+
+# Commit changes and exit
+frappe.db.commit()
+exit()
+2026-05-06 12:52:53,253 INFO ipython # 1. Mark system settings as complete
+frappe.db.set_value("System Settings", "System Settings", "setup_complete", 1)
+
+# 2. Set global defaults to bypass wizard
+frappe.db.set_default("desktop:setup_complete", "1")
+frappe.db.set_default("setup_complete", "1")
+
+# 3. Create a basic Company (Manual version to avoid import errors)
+if not frappe.db.exists("Company", "My Company"):
+    doc = frappe.get_doc({
+        "doctype": "Company",
+        "company_name": "My Company",
+        "default_currency": "USD",
+        "country": "United States" 
+    })
+    doc.insert(ignore_permissions=True)
+
+# 4. Commit and Exit
+frappe.db.commit()
+exit()
+2026-05-06 12:52:53,253 INFO ipython # 1. Enable Server Scripts at the session level just in case
+frappe.flags.ignore_server_script = True
+
+# 2. Mark system settings as complete
+frappe.db.set_value("System Settings", "System Settings", "setup_complete", 1)
+frappe.db.set_default("desktop:setup_complete", "1")
+
+# 3. Create a basic Company (Skipping the heavy account creation to avoid errors)
+if not frappe.db.exists("Company", "My Company"):
+    frappe.local.flags.ignore_chart_of_accounts = True # This prevents the crash you saw
+    doc = frappe.get_doc({
+        "doctype": "Company",
+        "company_name": "My Company",
+        "default_currency": "USD",
+        "country": "United States" 
+    })
+    doc.insert(ignore_permissions=True)
+
+# 4. Commit and Exit
+frappe.db.commit()
+exit()
+2026-05-06 12:52:53,254 INFO ipython === session end ===
+2026-05-06 12:52:57,825 INFO ipython === bench console session ===
+2026-05-06 12:52:57,826 INFO ipython # 1. Enable Server Scripts at the session level just in case
+frappe.flags.ignore_server_script = True
+
+# 2. Mark system settings as complete
+frappe.db.set_value("System Settings", "System Settings", "setup_complete", 1)
+frappe.db.set_default("desktop:setup_complete", "1")
+
+# 3. Create a basic Company (Skipping the heavy account creation to avoid errors)
+if not frappe.db.exists("Company", "My Company"):
+    frappe.local.flags.ignore_chart_of_accounts = True # This prevents the crash you saw
+    doc = frappe.get_doc({
+        "doctype": "Company",
+        "company_name": "My Company",
+        "default_currency": "USD",
+        "country": "United States" 
+    })
+    doc.insert(ignore_permissions=True)
+
+# 4. Commit and Exit
+frappe.db.commit()
+exit()
+2026-05-06 12:52:57,826 INFO ipython === session end ===

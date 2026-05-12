@@ -1,0 +1,10 @@
+{
+ "db_name": "_a40b0fc481d55b0e",
+ "db_password": "YHAdpHNmAbKLL91Q",
+ "db_type": "mariadb",
+ "developer_mode": 1,
+ "disable_user_verification": 1,
+ "server_script_enabled": 1,
+ "setup_complete": 1,
+ "skip_setup_wizard": 1
+}

@@ -1,0 +1,355 @@
+2026-05-04 17:25:21,319 DEBUG cd erp_stack_v15 && uv venv env --seed --python python3.11
+2026-05-04 17:25:30,895 LOG Getting frappe
+2026-05-04 17:25:30,896 DEBUG cd erp_stack_v15/apps && git clone https://github.com/frappe/frappe.git --branch version-15 --depth 1 --origin upstream
+2026-05-04 17:25:38,555 LOG Installing frappe
+2026-05-04 17:25:38,556 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15 && uv pip install --quiet --upgrade -e /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe  --python /home/pranjal/Desktop/finhub_local/erp_stack_v15/env/bin/python
+2026-05-04 17:25:47,814 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe && yarn install --check-files
+2026-05-04 17:25:55,214 DEBUG cd erp_stack_v15 && bench build
+2026-05-04 17:25:55,421 INFO /usr/local/bin/bench build
+2026-05-04 17:26:19,836 LOG setting up backups
+2026-05-04 17:26:19,845 LOG backups were set up
+2026-05-04 17:26:19,845 INFO Bench erp_stack_v15 initialized
+2026-05-04 17:30:13,690 INFO /usr/local/bin/bench get-app erpnext --branch version-15
+2026-05-04 17:30:14,459 LOG Getting erpnext
+2026-05-04 17:30:14,459 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git --branch version-15 --depth 1 --origin upstream
+2026-05-04 17:30:22,514 LOG Installing erpnext
+2026-05-04 17:30:22,514 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15 && uv pip install --quiet --upgrade -e /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/erpnext  --python /home/pranjal/Desktop/finhub_local/erp_stack_v15/env/bin/python
+2026-05-04 17:30:27,295 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/erpnext && yarn install --check-files
+2026-05-04 17:30:27,538 DEBUG bench build --app erpnext
+2026-05-04 17:30:27,643 INFO /usr/local/bin/bench build --app erpnext
+2026-05-04 17:33:17,158 INFO /usr/local/bin/bench get-app hrms --branch version-15
+2026-05-04 17:33:17,965 LOG Getting hrms
+2026-05-04 17:33:17,965 DEBUG cd ./apps && git clone https://github.com/frappe/hrms.git --branch version-15 --depth 1 --origin upstream
+2026-05-04 17:33:21,510 LOG Installing hrms
+2026-05-04 17:33:21,510 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15 && uv pip install --quiet --upgrade -e /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/hrms  --python /home/pranjal/Desktop/finhub_local/erp_stack_v15/env/bin/python
+2026-05-04 17:33:52,715 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/hrms && yarn install --check-files
+2026-05-04 17:34:22,193 DEBUG bench build --app hrms
+2026-05-04 17:34:22,279 INFO /usr/local/bin/bench build --app hrms
+2026-05-04 17:35:10,780 INFO /usr/local/bin/bench get-app payments --branch version-15
+2026-05-04 17:35:11,736 LOG Getting payments
+2026-05-04 17:35:11,736 DEBUG cd ./apps && git clone https://github.com/frappe/payments.git --branch version-15 --depth 1 --origin upstream
+2026-05-04 17:35:13,356 LOG Installing payments
+2026-05-04 17:35:13,356 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15 && uv pip install --quiet --upgrade -e /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/payments  --python /home/pranjal/Desktop/finhub_local/erp_stack_v15/env/bin/python
+2026-05-04 17:35:14,375 DEBUG bench build --app payments
+2026-05-04 17:35:14,460 INFO /usr/local/bin/bench build --app payments
+2026-05-04 17:35:24,099 INFO /usr/local/bin/bench new-site local.erp
+2026-05-04 17:35:58,192 INFO /usr/local/bin/bench --site local.erp install-app erpnext
+2026-05-04 17:36:37,600 INFO /usr/local/bin/bench --site local.erp install-app hrms
+2026-05-04 17:37:01,552 INFO /usr/local/bin/bench --site local.erp install-app payments
+2026-05-04 17:38:13,239 INFO /usr/local/bin/bench start
+2026-05-04 17:38:13,556 INFO /usr/local/bin/bench worker
+2026-05-04 17:38:13,572 INFO /usr/local/bin/bench schedule
+2026-05-04 17:38:13,595 INFO /usr/local/bin/bench watch
+2026-05-04 17:38:13,603 INFO /usr/local/bin/bench serve --port 8000
+2026-05-04 17:39:20,035 INFO /usr/local/bin/bench use local.erp
+2026-05-04 17:39:46,569 INFO /usr/local/bin/bench migrate
+2026-05-04 17:42:46,112 INFO /usr/local/bin/bench start
+2026-05-04 17:42:46,369 INFO /usr/local/bin/bench serve --port 8000
+2026-05-04 17:42:46,390 INFO /usr/local/bin/bench watch
+2026-05-04 17:42:46,422 INFO /usr/local/bin/bench schedule
+2026-05-04 17:42:46,425 INFO /usr/local/bin/bench worker
+2026-05-04 17:57:15,100 INFO /usr/local/bin/bench --site local.erp restore 20260504_151510-erp_sepa-cyber_com-database.sql.gz
+2026-05-04 17:58:31,519 INFO /usr/local/bin/bench migrate
+2026-05-04 18:00:01,545 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-05 12:00:01,668 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-05 12:47:46,668 INFO /usr/local/bin/bench start
+2026-05-05 12:47:47,088 INFO /usr/local/bin/bench schedule
+2026-05-05 12:47:47,103 INFO /usr/local/bin/bench worker
+2026-05-05 12:47:47,142 INFO /usr/local/bin/bench watch
+2026-05-05 12:47:47,182 INFO /usr/local/bin/bench serve --port 8000
+2026-05-05 13:28:56,762 INFO /usr/local/bin/bench list-apps
+2026-05-05 13:31:51,676 INFO /usr/local/bin/bench uninstall-app erpnext_telegram_integration
+2026-05-05 13:32:06,433 INFO /usr/local/bin/bench uninstall-app erpnext_telegram_integration
+2026-05-05 13:32:13,812 INFO /usr/local/bin/bench remove-app erpnext_telegram_integration
+2026-05-05 13:32:13,815 WARNING /usr/local/bin/bench remove-app erpnext_telegram_integration executed with exit code 1
+2026-05-05 13:32:58,605 INFO /usr/local/bin/bench --site apps.json console
+2026-05-05 13:32:59,034 INFO /usr/local/bin/bench --site apps.txt console
+2026-05-05 13:32:59,478 INFO /usr/local/bin/bench --site common_site_config.json console
+2026-05-05 13:32:59,937 INFO /usr/local/bin/bench --site local.erp console
+2026-05-05 13:33:39,866 INFO /usr/local/bin/bench --site local.erp console
+2026-05-05 13:34:00,822 INFO /usr/local/bin/bench --site local.erp console
+2026-05-05 13:36:00,562 INFO /usr/local/bin/bench --site local.erp console
+2026-05-05 13:37:10,102 INFO /usr/local/bin/bench clear-cache
+2026-05-05 13:37:10,822 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 13:37:11,671 INFO /usr/local/bin/bench restart
+2026-05-05 13:38:00,539 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-05 13:38:41,469 INFO /usr/local/bin/bench clear-cache
+2026-05-05 13:38:42,152 INFO /usr/local/bin/bench clear-website-cache
+2026-05-05 13:38:42,792 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 13:40:20,469 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 13:40:43,995 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-05 13:41:25,935 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-05 13:42:44,686 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-05 13:43:08,682 INFO /usr/local/bin/bench clear-cache
+2026-05-05 13:43:19,995 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 13:46:59,489 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-05 13:47:21,599 INFO /usr/local/bin/bench clear-cache
+2026-05-05 14:02:02,245 INFO /usr/local/bin/bench start
+2026-05-05 14:02:02,486 INFO /usr/local/bin/bench serve --port 8000
+2026-05-05 14:02:02,497 INFO /usr/local/bin/bench watch
+2026-05-05 14:02:02,574 INFO /usr/local/bin/bench worker
+2026-05-05 14:02:02,575 INFO /usr/local/bin/bench schedule
+2026-05-05 14:03:43,601 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-05 14:04:01,597 INFO /usr/local/bin/bench --site local.erp set-config disable_user_verification 1
+2026-05-05 14:04:02,080 INFO /usr/local/bin/bench --site local.erp execute frappe.utils.scheduler.reschedule_jobs
+2026-05-05 14:04:02,543 INFO /usr/local/bin/bench --site local.erp execute frappe.db.set_value('User', 'Guest', 'enabled', 1)
+2026-05-05 14:04:15,583 INFO /usr/local/bin/bench clear-cache
+2026-05-05 14:04:16,270 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 14:06:43,545 INFO /usr/local/bin/bench start
+2026-05-05 14:06:43,791 INFO /usr/local/bin/bench worker
+2026-05-05 14:06:43,886 INFO /usr/local/bin/bench watch
+2026-05-05 14:06:43,906 INFO /usr/local/bin/bench serve --port 8000
+2026-05-05 14:06:43,998 INFO /usr/local/bin/bench schedule
+2026-05-05 14:06:50,838 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 14:08:09,669 INFO /usr/local/bin/bench start
+2026-05-05 14:08:09,915 INFO /usr/local/bin/bench serve --port 8000
+2026-05-05 14:08:09,932 INFO /usr/local/bin/bench watch
+2026-05-05 14:08:09,969 INFO /usr/local/bin/bench worker
+2026-05-05 14:08:10,046 INFO /usr/local/bin/bench schedule
+2026-05-05 14:47:34,513 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-05 14:48:03,164 INFO /usr/local/bin/bench --site local.erp install-app frappe erpnext payments hrms --force
+2026-05-05 14:50:50,151 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 14:52:40,666 INFO /usr/local/bin/bench setup redis
+2026-05-05 14:53:07,332 INFO /usr/local/bin/bench --site local.erp install-app payments hrms --force
+2026-05-05 14:53:28,510 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-05 14:54:16,557 INFO /usr/local/bin/bench start
+2026-05-05 14:57:22,332 INFO /usr/local/bin/bench start
+2026-05-05 14:57:22,611 INFO /usr/local/bin/bench schedule
+2026-05-05 14:57:22,657 INFO /usr/local/bin/bench serve --port 8000
+2026-05-05 14:57:22,667 INFO /usr/local/bin/bench worker
+2026-05-05 14:57:22,682 INFO /usr/local/bin/bench watch
+2026-05-05 18:00:01,252 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-06 12:00:01,515 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-06 12:34:34,777 INFO /usr/local/bin/bench start
+2026-05-06 12:34:38,387 INFO /usr/local/bin/bench watch
+2026-05-06 12:34:38,529 INFO /usr/local/bin/bench worker
+2026-05-06 12:34:38,802 INFO /usr/local/bin/bench schedule
+2026-05-06 12:34:39,578 INFO /usr/local/bin/bench serve --port 8000
+2026-05-06 12:48:02,971 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-06 12:48:41,424 INFO /usr/local/bin/bench --site local.erp set-config developer_mode 1
+2026-05-06 12:48:49,736 INFO /usr/local/bin/bench migrate
+2026-05-06 12:50:46,974 INFO /usr/local/bin/bench --site local.erp set-config setup_complete 1
+2026-05-06 12:50:47,446 INFO /usr/local/bin/bench --site local.erp set-config skip_setup_wizard 1
+2026-05-06 12:50:47,894 INFO /usr/local/bin/bench --site local.erp execute frappe.db.set_default --args ['desktop:setup_complete', '1']
+2026-05-06 12:50:55,425 INFO /usr/local/bin/bench migrate
+2026-05-06 12:51:44,389 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 12:52:44,474 INFO /usr/local/bin/bench --site local.erp set-config server_script_enabled 1
+2026-05-06 12:52:56,614 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 12:53:04,105 INFO /usr/local/bin/bench --site local.erp clear-cache
+2026-05-06 12:53:04,828 INFO /usr/local/bin/bench start
+2026-05-06 12:53:56,435 INFO /usr/local/bin/bench --site local.erp set-config setup_complete 1
+2026-05-06 12:53:56,893 INFO /usr/local/bin/bench --site local.erp execute frappe.db.set_value('System Settings', 'System Settings', 'setup_complete', 1)
+2026-05-06 12:53:57,368 INFO /usr/local/bin/bench --site local.erp execute frappe.db.set_default('desktop:setup_complete', '1')
+2026-05-06 12:53:57,826 INFO /usr/local/bin/bench --site local.erp clear-cache
+2026-05-06 12:55:16,635 INFO /usr/local/bin/bench --site local.erp set-config setup_complete 1
+2026-05-06 12:55:17,103 INFO /usr/local/bin/bench --site local.erp set-config skip_setup_wizard 1
+2026-05-06 12:55:22,831 INFO /usr/local/bin/bench --site local.erp set-config server_script_enabled 1
+2026-05-06 12:55:34,284 INFO /usr/local/bin/bench --site local.erp clear-cache
+2026-05-06 12:55:48,703 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-06 12:56:43,823 INFO /usr/local/bin/bench --site local.erp set-config server_script_enabled 1
+2026-05-06 12:56:44,283 INFO /usr/local/bin/bench --site local.erp clear-cache
+2026-05-06 12:57:51,932 INFO /usr/local/bin/bench --site your-site-name console
+2026-05-06 12:57:58,318 INFO /usr/local/bin/bench --site local.erp clear-cache
+2026-05-06 12:58:37,235 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 12:59:21,391 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-06 13:00:22,779 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-06 13:00:59,529 INFO /usr/local/bin/bench stop
+2026-05-06 13:01:22,745 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-06 13:01:44,391 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-06 13:02:20,465 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-06 13:02:59,401 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-06 13:05:47,176 INFO /usr/local/bin/bench --site local.erp drop-site
+2026-05-06 13:05:55,495 INFO /usr/local/bin/bench --site local.erp drop-site
+2026-05-06 13:06:20,454 INFO /usr/local/bin/bench drop-site local.erp
+2026-05-06 13:07:09,700 INFO /usr/local/bin/bench new-site local.erp
+2026-05-06 13:07:33,431 INFO /usr/local/bin/bench --site local.erp install-app erpnext
+2026-05-06 13:08:06,207 INFO /usr/local/bin/bench --site local.erp install-app hrms
+2026-05-06 13:08:33,510 INFO /usr/local/bin/bench --site local.erp install-app payments
+2026-05-06 13:22:23,785 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 13:27:18,296 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 13:27:35,109 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 13:32:32,538 INFO /usr/local/bin/bench start
+2026-05-06 13:32:32,757 INFO /usr/local/bin/bench schedule
+2026-05-06 13:32:32,789 INFO /usr/local/bin/bench serve --port 8000
+2026-05-06 13:32:32,857 INFO /usr/local/bin/bench worker
+2026-05-06 13:32:32,930 INFO /usr/local/bin/bench watch
+2026-05-06 13:32:41,262 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 13:33:18,520 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-06 13:34:19,116 INFO /usr/local/bin/bench --site local.erp mariadb
+2026-05-06 13:34:30,762 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 13:36:41,440 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 13:38:56,204 INFO /usr/local/bin/bench --site local.erp console
+2026-05-06 13:39:07,337 INFO /usr/local/bin/bench migrate
+2026-05-06 14:07:09,737 INFO /usr/local/bin/bench migrate
+2026-05-06 15:29:28,308 INFO /usr/local/bin/bench new-app finhub
+2026-05-06 15:29:28,314 LOG creating new app finhub
+2026-05-06 15:30:18,264 LOG Installing finhub
+2026-05-06 15:30:18,265 DEBUG cd /home/pranjal/Desktop/finhub_local/erp_stack_v15 && uv pip install --quiet --upgrade -e /home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/finhub  --python /home/pranjal/Desktop/finhub_local/erp_stack_v15/env/bin/python
+2026-05-06 15:30:21,111 DEBUG bench build --app finhub
+2026-05-06 15:30:21,225 INFO /usr/local/bin/bench build --app finhub
+2026-05-06 15:30:55,330 INFO /usr/local/bin/bench --site local.erp install-app finhub
+2026-05-06 15:33:32,175 INFO /usr/local/bin/bench start
+2026-05-06 15:33:32,464 INFO /usr/local/bin/bench serve --port 8000
+2026-05-06 15:33:32,490 INFO /usr/local/bin/bench worker
+2026-05-06 15:33:32,493 INFO /usr/local/bin/bench watch
+2026-05-06 15:33:32,553 INFO /usr/local/bin/bench schedule
+2026-05-06 18:00:01,423 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-07 10:20:34,005 INFO /usr/local/bin/bench start
+2026-05-07 10:20:34,336 INFO /usr/local/bin/bench watch
+2026-05-07 10:20:34,399 INFO /usr/local/bin/bench serve --port 8000
+2026-05-07 10:20:34,419 INFO /usr/local/bin/bench worker
+2026-05-07 10:20:34,437 INFO /usr/local/bin/bench schedule
+2026-05-07 10:31:08,692 INFO /usr/local/bin/bench clear-cache
+2026-05-07 10:31:09,390 INFO /usr/local/bin/bench build
+2026-05-07 10:31:38,388 INFO /usr/local/bin/bench restart
+2026-05-07 10:31:44,552 INFO /usr/local/bin/bench migrae
+2026-05-07 10:31:49,413 INFO /usr/local/bin/bench migrate
+2026-05-07 11:09:23,095 INFO /usr/local/bin/bench migrate
+2026-05-07 11:18:37,026 INFO /usr/local/bin/bench migrate
+2026-05-07 12:00:01,334 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-07 12:11:30,340 INFO /usr/local/bin/bench migrate
+2026-05-07 12:18:22,305 INFO /usr/local/bin/bench migrate
+2026-05-07 12:30:30,134 INFO /usr/local/bin/bench migrate
+2026-05-07 13:38:15,792 INFO /usr/local/bin/bench migrate
+2026-05-07 13:38:22,952 INFO /usr/local/bin/bench restart
+2026-05-07 13:45:29,593 INFO /usr/local/bin/bench restart
+2026-05-07 13:54:30,256 INFO /usr/local/bin/bench --site local.erp set-config developer_mode 1
+2026-05-07 13:54:58,312 INFO /usr/local/bin/bench migrate
+2026-05-07 14:12:07,588 INFO /usr/local/bin/bench migrate
+2026-05-07 14:31:32,096 INFO /usr/local/bin/bench migrate
+2026-05-07 14:31:56,724 INFO /usr/local/bin/bench restart
+2026-05-07 14:32:16,319 INFO /usr/local/bin/bench migrate
+2026-05-07 14:33:15,139 INFO /usr/local/bin/bench migrate
+2026-05-07 14:34:03,833 INFO /usr/local/bin/bench migrate
+2026-05-07 14:34:22,205 INFO /usr/local/bin/bench restart
+2026-05-07 14:34:26,695 INFO /usr/local/bin/bench restart
+2026-05-07 14:34:28,508 INFO /usr/local/bin/bench restart
+2026-05-07 14:34:46,885 INFO /usr/local/bin/bench restart
+2026-05-07 14:35:26,907 INFO /usr/local/bin/bench migrate
+2026-05-07 14:36:44,927 INFO /usr/local/bin/bench restart
+2026-05-07 14:37:49,930 INFO /usr/local/bin/bench migrate
+2026-05-07 14:39:13,561 INFO /usr/local/bin/bench restart
+2026-05-07 14:39:19,332 INFO /usr/local/bin/bench migrate
+2026-05-07 14:40:53,168 INFO /usr/local/bin/bench restart
+2026-05-07 14:43:05,450 INFO /usr/local/bin/bench restart
+2026-05-07 14:43:27,560 INFO /usr/local/bin/bench restart
+2026-05-07 14:44:02,399 INFO /usr/local/bin/bench migrate
+2026-05-07 14:44:42,176 INFO /usr/local/bin/bench migrate
+2026-05-07 14:46:34,482 INFO /usr/local/bin/bench migrate
+2026-05-07 14:46:39,184 INFO /usr/local/bin/bench migrate
+2026-05-07 14:48:22,155 INFO /usr/local/bin/bench restart
+2026-05-07 14:48:31,623 INFO /usr/local/bin/bench migrate
+2026-05-07 14:48:42,735 INFO /usr/local/bin/bench migrate
+2026-05-07 14:49:12,493 INFO /usr/local/bin/bench restart
+2026-05-07 14:50:14,309 INFO /usr/local/bin/bench migrate
+2026-05-07 14:50:47,822 INFO /usr/local/bin/bench restart
+2026-05-07 14:52:40,384 INFO /usr/local/bin/bench restart
+2026-05-07 14:52:43,944 INFO /usr/local/bin/bench restart
+2026-05-07 14:53:00,505 INFO /usr/local/bin/bench migrate
+2026-05-07 14:53:33,341 INFO /usr/local/bin/bench restart
+2026-05-07 14:53:57,123 INFO /usr/local/bin/bench migrate
+2026-05-07 14:55:11,837 INFO /usr/local/bin/bench restart
+2026-05-07 14:56:23,766 INFO /usr/local/bin/bench migrate
+2026-05-07 14:56:49,227 INFO /usr/local/bin/bench restart
+2026-05-07 15:00:22,578 INFO /usr/local/bin/bench restart
+2026-05-07 15:00:46,070 INFO /usr/local/bin/bench migrate
+2026-05-07 15:02:19,617 INFO /usr/local/bin/bench migrate
+2026-05-07 15:03:36,366 INFO /usr/local/bin/bench migrate
+2026-05-07 15:05:38,708 INFO /usr/local/bin/bench restart
+2026-05-07 15:05:51,528 INFO /usr/local/bin/bench migrate
+2026-05-07 15:09:36,454 INFO /usr/local/bin/bench restart
+2026-05-07 15:10:26,972 INFO /usr/local/bin/bench migrate
+2026-05-07 15:10:33,298 INFO /usr/local/bin/bench migrate
+2026-05-07 15:10:46,694 INFO /usr/local/bin/bench restart
+2026-05-07 15:11:10,305 INFO /usr/local/bin/bench restart
+2026-05-07 15:11:35,975 INFO /usr/local/bin/bench migrate
+2026-05-07 15:11:40,624 INFO /usr/local/bin/bench migrate
+2026-05-07 15:12:13,216 INFO /usr/local/bin/bench migrate
+2026-05-07 15:13:34,684 INFO /usr/local/bin/bench restart
+2026-05-07 15:13:58,277 INFO /usr/local/bin/bench migrate
+2026-05-07 15:14:04,805 INFO /usr/local/bin/bench restart
+2026-05-07 15:14:53,300 INFO /usr/local/bin/bench restart
+2026-05-07 15:15:40,413 INFO /usr/local/bin/bench restart
+2026-05-07 15:54:50,450 INFO /usr/local/bin/bench console
+2026-05-07 15:59:22,244 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-07 16:01:21,551 INFO /usr/local/bin/bench console
+2026-05-07 16:16:39,233 INFO /usr/local/bin/bench migrate
+2026-05-07 16:17:50,995 INFO /usr/local/bin/bench build --app custom_app
+2026-05-07 16:19:12,766 INFO /usr/local/bin/bench build --app custom_applass:
+2026-05-07 17:36:18,988 INFO /usr/local/bin/bench start
+2026-05-07 17:37:03,002 INFO /usr/local/bin/bench start
+2026-05-07 17:37:03,241 INFO /usr/local/bin/bench serve --port 8000
+2026-05-07 17:37:03,272 INFO /usr/local/bin/bench watch
+2026-05-07 17:37:03,336 INFO /usr/local/bin/bench schedule
+2026-05-07 17:37:03,350 INFO /usr/local/bin/bench worker
+2026-05-07 17:51:20,955 INFO /usr/local/bin/bench --site local.erp console
+2026-05-07 17:51:46,539 INFO /usr/local/bin/bench --site local.erp clear-cache
+2026-05-07 17:51:51,846 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-07 17:58:39,164 INFO /usr/local/bin/bench --site local.erp console
+2026-05-07 17:58:51,589 INFO /usr/local/bin/bench --site local.erp migrate
+2026-05-07 18:00:01,592 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-08 10:20:52,059 INFO /usr/local/bin/bench start
+2026-05-08 10:20:52,412 INFO /usr/local/bin/bench schedule
+2026-05-08 10:20:52,422 INFO /usr/local/bin/bench serve --port 8000
+2026-05-08 10:20:52,426 INFO /usr/local/bin/bench watch
+2026-05-08 10:20:52,448 INFO /usr/local/bin/bench worker
+2026-05-08 10:28:16,953 INFO /usr/local/bin/bench console
+2026-05-08 11:23:15,569 INFO /usr/local/bin/bench migrate
+2026-05-08 12:00:02,045 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-08 12:25:43,054 INFO /usr/local/bin/bench console
+2026-05-08 12:55:08,547 INFO /usr/local/bin/bench console
+2026-05-08 12:55:30,520 INFO /usr/local/bin/bench clear-cache
+2026-05-08 12:55:35,137 INFO /usr/local/bin/bench migrate
+2026-05-08 12:58:48,456 INFO /usr/local/bin/bench clear-cache
+2026-05-08 12:58:51,977 INFO /usr/local/bin/bench console
+2026-05-08 14:19:56,268 INFO /usr/local/bin/bench console
+2026-05-08 14:22:45,499 INFO /usr/local/bin/bench clear
+2026-05-08 14:22:54,605 INFO /usr/local/bin/bench console
+2026-05-08 14:25:25,334 INFO /usr/local/bin/bench restart
+2026-05-08 14:25:40,191 INFO /usr/local/bin/bench console
+2026-05-08 14:29:14,112 INFO /usr/local/bin/bench console
+2026-05-08 15:22:42,158 INFO /usr/local/bin/bench migrate
+2026-05-08 18:00:01,820 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-11 11:35:07,068 INFO /usr/local/bin/bench start
+2026-05-11 11:35:07,543 INFO /usr/local/bin/bench worker
+2026-05-11 11:35:07,573 INFO /usr/local/bin/bench schedule
+2026-05-11 11:35:07,690 INFO /usr/local/bin/bench watch
+2026-05-11 11:35:07,728 INFO /usr/local/bin/bench serve --port 8000
+2026-05-11 12:00:01,987 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-11 12:12:10,395 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 13:50:13,670 INFO /usr/local/bin/bench migrate
+2026-05-11 18:00:01,289 INFO /usr/local/bin/bench --verbose --site all backup
+2026-05-11 18:23:56,444 INFO /usr/local/bin/bench migrate
+2026-05-11 18:24:05,466 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 18:26:46,314 INFO /usr/local/bin/bench migrate
+2026-05-11 18:27:03,180 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 18:31:43,517 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 18:33:26,879 INFO /usr/local/bin/bench migrate
+2026-05-11 18:36:08,985 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 18:39:43,564 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 18:40:52,316 INFO /usr/local/bin/bench start
+2026-05-11 18:40:52,702 INFO /usr/local/bin/bench schedule
+2026-05-11 18:40:52,704 INFO /usr/local/bin/bench watch
+2026-05-11 18:40:52,720 INFO /usr/local/bin/bench worker
+2026-05-11 18:40:52,801 INFO /usr/local/bin/bench serve --port 8000
+2026-05-11 18:40:58,658 INFO /usr/local/bin/bench migrate
+2026-05-11 18:41:56,659 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 18:54:56,537 INFO /usr/local/bin/bench migrate
+2026-05-11 18:55:05,952 INFO /usr/local/bin/bench start
+2026-05-11 18:55:06,301 INFO /usr/local/bin/bench watch
+2026-05-11 18:55:06,355 INFO /usr/local/bin/bench schedule
+2026-05-11 18:55:06,362 INFO /usr/local/bin/bench serve --port 8000
+2026-05-11 18:55:06,419 INFO /usr/local/bin/bench worker
+2026-05-11 18:57:17,529 INFO /usr/local/bin/bench --site local.erp console
+2026-05-11 18:57:30,734 INFO /usr/local/bin/bench restart
+2026-05-11 18:57:32,299 INFO /usr/local/bin/bench restart
+2026-05-11 18:57:35,313 INFO /usr/local/bin/bench migrate
+2026-05-11 19:02:06,067 INFO /usr/local/bin/bench migrate
+2026-05-11 19:04:11,911 INFO /usr/local/bin/bench migrate
+2026-05-11 19:07:22,502 INFO /usr/local/bin/bench migrate
+2026-05-12 09:51:57,789 INFO /usr/local/bin/bench start
+2026-05-12 09:51:58,145 INFO /usr/local/bin/bench watch
+2026-05-12 09:51:58,160 INFO /usr/local/bin/bench schedule
+2026-05-12 09:51:58,162 INFO /usr/local/bin/bench serve --port 8000
+2026-05-12 09:51:58,177 INFO /usr/local/bin/bench worker
+2026-05-12 10:28:05,703 INFO /usr/local/bin/bench migrate

@@ -1,0 +1,157 @@
+2026-05-04 17:57:48,881 ERROR scheduler Exception in Enqueue Events for Site local.erp
+Traceback (most recent call last):
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 842, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 230, in sql
+    self._cursor.execute(query, values)
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table '_a40b0fc481d55b0e.tabSingles' doesn't exist")
+2026-05-04 19:06:54,694 ERROR scheduler Exception in Enqueue Events for Site local.erp
+Traceback (most recent call last):
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/home/pranjal/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 842, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: MariadbConnection | PostgresConnection = self.get_connection()
+                                                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+2026-05-06 12:36:48,844 ERROR scheduler Skipped queueing erpnext.support.doctype.service_level_agreement.service_level_agreement.check_agreement_status because it was found in queue for local.erp
+2026-05-06 12:36:48,856 ERROR scheduler Skipped queueing erpnext.accounts.utils.auto_create_exchange_rate_revaluation_daily because it was found in queue for local.erp
+2026-05-06 12:36:48,860 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_contacts.google_contacts.sync because it was found in queue for local.erp
+2026-05-06 12:36:48,868 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_tool.bom_update_tool.auto_update_latest_price_in_all_boms because it was found in queue for local.erp
+2026-05-06 12:36:48,878 ERROR scheduler Skipped queueing frappe.social.doctype.energy_point_settings.energy_point_settings.allocate_review_points because it was found in queue for local.erp
+2026-05-06 12:36:48,923 ERROR scheduler Skipped queueing erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings.automatic_synchronization because it was found in queue for local.erp
+2026-05-06 12:36:48,934 ERROR scheduler Skipped queueing erpnext.quality_management.doctype.quality_review.quality_review.review because it was found in queue for local.erp
+2026-05-06 12:36:48,943 ERROR scheduler Skipped queueing erpnext.setup.doctype.company.company.cache_companies_monthly_sales_history because it was found in queue for local.erp
+2026-05-06 12:36:48,961 ERROR scheduler Skipped queueing erpnext.crm.doctype.email_campaign.email_campaign.set_email_campaign_status because it was found in queue for local.erp
+2026-05-06 12:36:48,970 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for local.erp
+2026-05-06 12:36:48,974 ERROR scheduler Skipped queueing hrms.hr.doctype.shift_schedule_assignment.shift_schedule_assignment.process_auto_shift_creation because it was found in queue for local.erp
+2026-05-06 12:36:48,983 ERROR scheduler Skipped queueing frappe.desk.notifications.clear_notifications because it was found in queue for local.erp
+2026-05-06 12:36:48,989 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for local.erp
+2026-05-06 12:36:49,000 ERROR scheduler Skipped queueing erpnext.crm.doctype.contract.contract.update_status_for_contracts because it was found in queue for local.erp
+2026-05-06 12:36:49,013 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.remove_unverified_record because it was found in queue for local.erp
+2026-05-06 12:36:49,019 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for local.erp
+2026-05-06 12:36:49,022 ERROR scheduler Skipped queueing frappe.desk.utils.delete_old_exported_report_files because it was found in queue for local.erp
+2026-05-06 12:36:49,043 ERROR scheduler Skipped queueing frappe.email.doctype.auto_email_report.auto_email_report.send_daily because it was found in queue for local.erp
+2026-05-06 12:36:49,048 ERROR scheduler Skipped queueing erpnext.setup.doctype.email_digest.email_digest.send because it was found in queue for local.erp
+2026-05-06 12:36:49,055 ERROR scheduler Skipped queueing frappe.integrations.doctype.s3_backup_settings.s3_backup_settings.take_backups_daily because it was found in queue for local.erp
+2026-05-06 12:36:49,063 ERROR scheduler Skipped queueing erpnext.accounts.doctype.process_subscription.process_subscription.create_subscription_process because it was found in queue for local.erp
+2026-05-06 12:36:49,065 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for local.erp
+2026-05-06 12:36:49,076 ERROR scheduler Skipped queueing hrms.hr.utils.allocate_earned_leaves because it was found in queue for local.erp
+2026-05-06 12:36:49,121 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.send_project_status_email_to_users because it was found in queue for local.erp
+2026-05-06 12:36:49,133 ERROR scheduler Skipped queueing erpnext.assets.doctype.asset_maintenance_log.asset_maintenance_log.update_asset_maintenance_log_status because it was found in queue for local.erp
+2026-05-08 19:13:36,738 ERROR scheduler Exception in Enqueue Events for Site local.erp
+Traceback (most recent call last):
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/socket.py", line 863, in create_connection
+    raise exceptions[0]
+  File "/home/pranjal/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/socket.py", line 848, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 99, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 143, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/utils/scheduler.py", line 156, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 842, in get_single_value
+    ).run()
+      ^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/query_builder/utils.py", line 87, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 207, in sql
+    self.connect()
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/database.py", line 112, in connect
+    self._conn: MariadbConnection | PostgresConnection = self.get_connection()
+                                                         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/mariadb/database.py", line 108, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/mariadb/database.py", line 114, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/apps/frappe/frappe/database/mariadb/database.py", line 117, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/home/pranjal/Desktop/finhub_local/erp_stack_v15/env/lib/python3.11/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")

@@ -1,0 +1,6 @@
+2026-05-04 17:59:32,858 ERROR frappe New Exception collected in error log
+Site: local.erp
+Form Dict: {'app_path': 'home'}
+2026-05-05 12:47:52,433 ERROR frappe New Exception collected in error log
+Site: local.erp
+Form Dict: {}

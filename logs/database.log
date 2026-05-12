@@ -1,0 +1,555 @@
+2026-05-06 13:10:21,242 WARNING database DDL Query made to DB:
+ALTER TABLE `tabIncome Tax Slab` ADD INDEX `creation`(`creation`)
+2026-05-06 13:10:21,310 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Component` ADD COLUMN `component_type` varchar(140)
+2026-05-06 13:10:21,321 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Component` MODIFY `amount` decimal(21,9) not null default 0, MODIFY `max_benefit_amount` decimal(21,9) not null default 0
+2026-05-06 13:10:21,331 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSalary Component` ADD INDEX `creation`(`creation`)
+2026-05-06 13:10:21,387 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` ADD COLUMN `basic_component` varchar(140), ADD COLUMN `hra_component` varchar(140), ADD COLUMN `arrear_component` varchar(140)
+2026-05-06 13:10:21,395 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCompany` MODIFY `monthly_sales_target` decimal(21,9) not null default 0, MODIFY `total_monthly_sales` decimal(21,9) not null default 0, MODIFY `credit_limit` decimal(21,9) not null default 0
+2026-05-06 13:10:21,472 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` ADD COLUMN `pan_number` varchar(140), ADD COLUMN `provident_fund_account` varchar(140), ADD COLUMN `ifsc_code` varchar(140), ADD COLUMN `micr_code` varchar(140)
+2026-05-06 13:10:21,478 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee` MODIFY `ctc` decimal(21,9) not null default 0
+2026-05-06 13:10:21,514 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Tax Exemption Declaration` ADD COLUMN `monthly_house_rent` decimal(21,9) not null default 0, ADD COLUMN `rented_in_metro_city` int(1) not null default 0, ADD COLUMN `salary_structure_hra` decimal(21,9) not null default 0, ADD COLUMN `annual_hra_exemption` decimal(21,9) not null default 0, ADD COLUMN `monthly_hra_exemption` decimal(21,9) not null default 0
+2026-05-06 13:10:21,553 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Tax Exemption Declaration` MODIFY `total_exemption_amount` decimal(21,9) not null default 0, MODIFY `total_declared_amount` decimal(21,9) not null default 0
+2026-05-06 13:10:21,590 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Tax Exemption Proof Submission` ADD COLUMN `house_rent_payment_amount` decimal(21,9) not null default 0, ADD COLUMN `rented_in_metro_city` int(1) not null default 0, ADD COLUMN `rented_from_date` date, ADD COLUMN `rented_to_date` date, ADD COLUMN `monthly_house_rent` decimal(21,9) not null default 0, ADD COLUMN `monthly_hra_exemption` decimal(21,9) not null default 0, ADD COLUMN `total_eligible_hra_exemption` decimal(21,9) not null default 0
+2026-05-06 13:10:21,597 WARNING database DDL Query made to DB:
+ALTER TABLE `tabEmployee Tax Exemption Proof Submission` MODIFY `exemption_amount` decimal(21,9) not null default 0, MODIFY `total_actual_amount` decimal(21,9) not null default 0
+2026-05-06 13:39:07,812 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-06 13:39:08,176 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-06 13:39:08,529 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-06 14:07:10,289 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-06 14:07:10,727 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-06 14:07:11,116 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 10:31:49,986 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 10:31:50,486 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 10:31:51,188 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 11:09:23,566 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 11:09:23,971 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 11:09:24,377 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 11:18:37,498 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 11:18:37,875 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 11:18:38,235 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 12:11:30,814 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 12:11:31,246 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 12:11:31,630 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 12:18:22,779 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 12:18:23,161 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 12:18:23,552 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 12:30:30,601 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 12:30:30,988 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 12:30:31,347 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 13:38:16,356 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 13:38:16,867 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 13:38:17,337 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 13:54:58,890 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 13:54:59,391 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 13:54:59,881 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 13:59:20,233 WARNING database DDL Query made to DB:
+create table `tabBusiness Vertical` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2026-05-07 14:00:13,256 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBusiness Vertical` ADD COLUMN `vertical_name` varchar(140)
+2026-05-07 14:01:11,953 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBusiness Vertical` ADD COLUMN `vertical_code` varchar(140) unique
+2026-05-07 14:01:11,954 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBusiness Vertical` ADD UNIQUE INDEX IF NOT EXISTS vertical_code (`vertical_code`)
+2026-05-07 14:03:29,226 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBusiness Vertical` ADD COLUMN `is_active` int(1) not null default 1
+2026-05-07 14:04:03,542 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBusiness Vertical` ADD COLUMN `description` text
+2026-05-07 14:12:08,162 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:12:08,671 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:12:09,226 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:31:32,788 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:31:33,349 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:31:33,828 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:32:16,871 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:32:17,438 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:32:17,928 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:33:15,691 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:33:16,204 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:33:16,726 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:34:04,392 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:34:04,972 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:34:05,444 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:35:27,465 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:35:27,973 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:35:28,482 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:37:50,488 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:37:51,072 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:37:51,565 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:39:20,080 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:39:20,602 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:39:21,135 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:44:02,962 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:44:03,481 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:44:03,960 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:44:42,737 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:44:43,265 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:44:43,751 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:46:35,044 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:46:35,561 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:46:36,064 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:46:39,895 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:46:40,565 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:46:41,187 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:48:32,184 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:48:32,696 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:48:33,218 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:48:43,503 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:48:44,728 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:48:45,649 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:50:14,907 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:50:15,419 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:50:15,970 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:53:01,080 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:53:01,621 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:53:02,165 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:53:57,680 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:53:58,235 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:53:58,707 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 14:56:24,349 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 14:56:24,853 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 14:56:25,365 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:00:46,643 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:00:47,145 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:00:47,654 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:02:20,218 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:02:20,728 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:02:21,206 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:03:37,034 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:03:37,524 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:03:38,012 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:05:52,130 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:05:52,678 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:05:53,186 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:10:27,538 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:10:28,041 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:10:28,543 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:10:33,974 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:10:34,593 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:10:35,250 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:11:36,540 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:11:37,045 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:11:37,538 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:11:41,380 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:11:42,046 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:11:42,653 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:12:13,950 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:12:14,594 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:12:15,072 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:13:58,830 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:13:59,327 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:13:59,808 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 15:35:45,403 WARNING database DDL Query made to DB:
+create table `tabFinhub Product` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2026-05-07 15:36:13,054 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Product` ADD COLUMN `product_name` varchar(140)
+2026-05-07 15:47:06,151 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Product` ADD COLUMN `product_code` varchar(140) unique
+2026-05-07 15:47:06,151 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Product` ADD UNIQUE INDEX IF NOT EXISTS product_code (`product_code`)
+2026-05-07 15:47:59,643 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Product` ADD COLUMN `vertical` varchar(140)
+2026-05-07 15:51:43,868 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Product` ADD COLUMN `description` longtext, ADD COLUMN `is_active` int(1) not null default 1
+2026-05-07 15:59:22,713 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 15:59:23,104 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 15:59:23,481 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 16:16:39,783 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 16:16:40,303 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 16:16:40,783 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 17:44:39,057 WARNING database DDL Query made to DB:
+create table `tabProduct Feature` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2026-05-07 17:48:11,657 WARNING database DDL Query made to DB:
+alter table `tabProduct Feature` add column if not exists parent varchar(140)
+2026-05-07 17:48:11,658 WARNING database DDL Query made to DB:
+alter table `tabProduct Feature` add column if not exists parenttype varchar(140)
+2026-05-07 17:48:11,658 WARNING database DDL Query made to DB:
+alter table `tabProduct Feature` add column if not exists parentfield varchar(140)
+2026-05-07 17:48:11,695 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProduct Feature` ADD COLUMN `feature_name` varchar(140)
+2026-05-07 17:51:32,373 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProduct Feature` ADD COLUMN `description` text
+2026-05-07 17:51:32,422 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProduct Feature` ADD COLUMN `is_included` int(1) not null default 1
+2026-05-07 17:51:32,581 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProduct Feature` ADD COLUMN `price` decimal(21,9) not null default 0
+2026-05-07 17:51:52,556 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 17:51:53,064 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 17:51:53,579 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 17:51:54,021 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProduct Feature` MODIFY `price` decimal(21,9) not null default 0
+2026-05-07 17:58:40,881 WARNING database DDL Query made to DB:
+alter table `tabProduct Feature` add column if not exists parent varchar(140)
+2026-05-07 17:58:40,882 WARNING database DDL Query made to DB:
+alter table `tabProduct Feature` add column if not exists parenttype varchar(140)
+2026-05-07 17:58:40,882 WARNING database DDL Query made to DB:
+alter table `tabProduct Feature` add column if not exists parentfield varchar(140)
+2026-05-07 17:58:40,937 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProduct Feature` MODIFY `price` decimal(21,9) not null default 0
+2026-05-07 17:58:52,072 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-07 17:58:52,489 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-07 17:58:52,950 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-07 17:58:53,504 WARNING database DDL Query made to DB:
+ALTER TABLE `tabProduct Feature` MODIFY `price` decimal(21,9) not null default 0
+2026-05-08 10:22:06,101 WARNING database DDL Query made to DB:
+create table `tabOffer Item` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2026-05-08 10:28:19,188 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOffer Item` ADD COLUMN `feature_name` varchar(140), ADD COLUMN `description` text, ADD COLUMN `is_standard` int(1) not null default 0, ADD COLUMN `qty` int(11) not null default 1, ADD COLUMN `rate` decimal(21,9) not null default 0, ADD COLUMN `amount` decimal(21,9) not null default 0
+2026-05-08 10:28:45,848 WARNING database DDL Query made to DB:
+create table `tabFinhub Offer` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`customer` varchar(140),
+`transaction_date` date,
+`product` varchar(140),
+`vertical` varchar(140),
+`status` varchar(140) default 'Draft',
+`total_amount` decimal(21,9) not null default 0,
+`amended_from` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `amended_from`(`amended_from`),
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2026-05-08 11:23:16,070 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-08 11:23:16,604 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-08 11:23:17,119 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-08 11:23:17,769 WARNING database DDL Query made to DB:
+ALTER TABLE `tabOffer Item` MODIFY `rate` decimal(21,9) not null default 0, MODIFY `amount` decimal(21,9) not null default 0
+2026-05-08 11:23:17,837 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Offer` MODIFY `total_amount` decimal(21,9) not null default 0
+2026-05-08 12:55:35,638 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-08 12:55:36,207 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-08 12:55:36,731 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-08 14:15:43,462 WARNING database DDL Query made to DB:
+create table `tabFinhub Pricing Rule` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus int(1) not null default '0',
+			idx int(8) not null default '0',
+			`title` varchar(140),
+`apply_on` varchar(140),
+`is_active` int(1) not null default 1,
+`product` varchar(140),
+`vertical` varchar(140),
+`discount_percentage` decimal(21,9) not null default 0,
+`priority` int(11) not null default 0,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index modified(modified))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2026-05-08 15:21:21,184 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Pricing Rule` MODIFY `discount_percentage` decimal(21,9) not null default 0
+2026-05-08 15:22:25,875 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Pricing Rule` MODIFY `discount_percentage` decimal(21,9) not null default 0
+2026-05-08 15:22:42,841 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-08 15:22:43,472 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-08 15:22:44,117 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-08 15:24:40,308 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Pricing Rule` MODIFY `discount_percentage` decimal(21,9) not null default 0
+2026-05-08 15:28:05,456 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Pricing Rule` MODIFY `discount_percentage` decimal(21,9) not null default 0, ADD UNIQUE INDEX IF NOT EXISTS title (`title`)
+2026-05-08 15:28:43,776 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Pricing Rule` MODIFY `discount_percentage` decimal(21,9) not null default 0
+2026-05-11 12:12:19,097 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Offer` ADD COLUMN `territory` varchar(140), ADD COLUMN `customer_group` varchar(140)
+2026-05-11 12:12:19,104 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Offer` MODIFY `total_amount` decimal(21,9) not null default 0
+2026-05-11 13:50:14,306 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 13:50:14,993 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 13:50:15,636 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 18:22:18,638 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Offer` ADD COLUMN `currency` varchar(140) default 'USD'
+2026-05-11 18:22:18,645 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Offer` MODIFY `total_amount` decimal(21,9) not null default 0
+2026-05-11 18:23:56,980 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 18:23:57,601 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 18:23:58,115 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 18:26:46,792 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 18:26:47,246 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 18:26:47,653 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 18:33:27,377 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 18:33:27,791 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 18:33:28,169 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 18:40:59,401 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 18:41:00,056 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 18:41:00,626 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 18:54:57,075 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 18:54:57,477 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 18:54:57,871 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 18:57:35,819 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 18:57:36,267 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 18:57:36,647 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 19:02:06,552 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 19:02:06,945 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 19:02:07,343 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 19:04:12,431 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 19:04:12,855 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 19:04:13,259 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 19:06:45,754 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Offer` MODIFY `total_amount` decimal(21,9) not null default 0
+2026-05-11 19:07:23,014 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-11 19:07:23,448 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-11 19:07:23,866 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
+2026-05-11 19:07:24,311 WARNING database DDL Query made to DB:
+ALTER TABLE `tabFinhub Offer` MODIFY `total_amount` decimal(21,9) not null default 0
+2026-05-12 10:28:06,211 WARNING database DDL Query made to DB:
+alter table `tabDocType` add column if not exists migration_hash varchar(140)
+2026-05-12 10:28:06,668 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` DROP INDEX `print_heading`
+2026-05-12 10:28:07,155 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPrint Heading` ADD UNIQUE INDEX IF NOT EXISTS print_heading (`print_heading`)
