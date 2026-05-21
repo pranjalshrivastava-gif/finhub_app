@@ -8,7 +8,7 @@ app_license = "mit"
 
 doc_events = {
     "Commercial Offer": {
-        "before_save": "finhub.api.map_entity_on_save",
-        "on_submit": "finhub.api.auto_create_ticket"
+        "before_save": "finhub.api.automation.map_entity_on_save",
+        "on_submit": "finhub.api.automation.auto_create_ticket"
     }
 }

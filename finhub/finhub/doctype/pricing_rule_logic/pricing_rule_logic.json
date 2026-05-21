@@ -8,7 +8,13 @@
  "field_order": [
   "rule_name",
   "vertical",
-  "discount_percentage"
+  "country",
+  "minimum_qty",
+  "discount_percentage",
+  "markup_percentage",
+  "currency",
+  "priority",
+  "is_active"
  ],
  "fields": [
   {
@@ -25,15 +31,52 @@
    "options": "Business Vertical"
   },
   {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "default": "0",
+   "fieldname": "minimum_qty",
+   "fieldtype": "Int",
+   "label": "Minimum Quantity"
+  },
+  {
+   "default": "0",
    "fieldname": "discount_percentage",
    "fieldtype": "Percent",
    "label": "Discount %"
+  },
+  {
+   "default": "0",
+   "fieldname": "markup_percentage",
+   "fieldtype": "Percent",
+   "label": "Markup %"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "1",
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "label": "Priority"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-13 19:38:44.400848",
+ "modified": "2026-05-20 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "Finhub",
  "name": "Pricing Rule Logic",
