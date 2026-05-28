@@ -1,27 +1,35 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:vertical_name",
- "creation": "2026-05-13 21:06:20.209477",
+ "autoname": "field:vertical_name1",
+ "creation": "2026-05-27 16:49:01.791329",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "vertical_name"
+  "h_section",
+  "g_column",
+  "vertical_name1"
  ],
  "fields": [
   {
-   "fieldname": "vertical_name",
+   "fieldname": "h_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "g_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vertical_name1",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Vertical Name",
-   "reqd": 1,
    "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-13 21:35:43.988762",
+ "modified": "2026-05-28 14:10:27.576349",
  "modified_by": "Administrator",
  "module": "Finhub",
  "name": "Business Vertical",

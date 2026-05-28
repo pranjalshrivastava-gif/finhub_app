@@ -1,13 +1,9 @@
 import frappe
 from frappe.model.document import Document
-from frappe.utils import flt
+from frappe.utils import flt, today
 from frappe import _
 
-import requests
-import json
-import base64
-import jwt
-import time
+from erpnext.setup.utils import get_exchange_rate
 
 
 class CommercialOffer(Document):
@@ -48,10 +44,42 @@ class CommercialOffer(Document):
         self.currency = mapping.default_currency
         self.sales_manager_email = mapping.sales_manager_email
 
+    def get_conversion_rate(self):
+
+        company_currency = "INR"
+
+        target_currency = self.currency or "INR"
+
+        if company_currency == target_currency:
+            return 1.0
+
+        exchange_rate = get_exchange_rate(
+            company_currency,
+            target_currency,
+            transaction_date=today()
+        )
+
+        if not exchange_rate:
+
+            frappe.throw(
+                _(
+                    "Currency Exchange missing for {0} to {1}"
+                ).format(
+                    company_currency,
+                    target_currency
+                )
+            )
+
+        return flt(exchange_rate)
+
     def apply_pricing_rules(self):
 
         if not self.get("items"):
             return
+
+        conversion_rate = self.get_conversion_rate()
+
+        self.conversion_rate = conversion_rate
 
         pricing_rules = frappe.get_all(
             "Pricing Rule Logic",
@@ -75,25 +103,42 @@ class CommercialOffer(Document):
 
             qty = flt(item.qty)
 
-            # Prevent recursive pricing
-            base_rate = flt(item.base_rate or item.rate)
+            # ALWAYS USE HIDDEN INR VALUE
+            base_rate_inr = flt(item.base_rate_inr)
 
-            final_rate = base_rate
+            if not base_rate_inr:
+
+                item.base_rate = 0
+                item.rate = 0
+                item.amount = 0
+
+                continue
+
+            final_rate_inr = base_rate_inr
 
             for rule in pricing_rules:
 
                 rule_match = True
 
                 # Vertical Match
-                if rule.vertical and rule.vertical != self.vertical:
+                if (
+                    rule.vertical
+                    and rule.vertical != self.vertical
+                ):
                     rule_match = False
 
                 # Country Match
-                if rule.country and rule.country != self.country:
+                if (
+                    rule.country
+                    and rule.country != self.country
+                ):
                     rule_match = False
 
-                # Quantity Match
-                if rule.minimum_qty and qty < flt(rule.minimum_qty):
+                # Qty Match
+                if (
+                    rule.minimum_qty
+                    and qty < flt(rule.minimum_qty)
+                ):
                     rule_match = False
 
                 if not rule_match:
@@ -102,39 +147,50 @@ class CommercialOffer(Document):
                 # Apply Markup
                 if flt(rule.markup_percentage):
 
-                    markup_amount = (
-                        final_rate * flt(rule.markup_percentage) / 100
+                    final_rate_inr += (
+                        final_rate_inr
+                        * flt(rule.markup_percentage)
+                        / 100
                     )
-
-                    final_rate += markup_amount
 
                 # Apply Discount
                 if flt(rule.discount_percentage):
 
-                    discount_amount = (
-                        final_rate * flt(rule.discount_percentage) / 100
+                    final_rate_inr -= (
+                        final_rate_inr
+                        * flt(rule.discount_percentage)
+                        / 100
                     )
 
-                    final_rate -= discount_amount
+            # Convert Base Rate
+            converted_base_rate = (
+                base_rate_inr * conversion_rate
+            )
 
-                # Override Currency
-                if rule.currency:
-                    self.currency = rule.currency
+            # Convert Final Rate
+            converted_rate = (
+                final_rate_inr * conversion_rate
+            )
 
-            item.rate = final_rate
-            item.amount = qty * final_rate
+            item.base_rate = converted_base_rate
+
+            item.rate = converted_rate
+
+            item.amount = qty * converted_rate
 
     def calculate_totals(self):
 
         total = 0.0
 
         if not self.get("items"):
+
             self.total_amount = 0.0
             return
 
         for item in self.items:
 
             qty = flt(item.qty)
+
             rate = flt(item.rate)
 
             item.amount = qty * rate
@@ -147,6 +203,7 @@ class CommercialOffer(Document):
     def get_module_data(self, finhub_module):
 
         if not finhub_module:
+
             return {
                 "base_price": 0.0
             }
@@ -177,6 +234,7 @@ class CommercialOffer(Document):
             "company": self.company,
             "branch": self.branch,
             "sales_manager_email": self.sales_manager_email,
+            "conversion_rate": self.conversion_rate,
             "items": self.items
         }
 
@@ -192,9 +250,7 @@ class CommercialOffer(Document):
                     "message": _("Envelope already created")
                 }
 
-            # Placeholder Logic
-            # Replace with actual DocuSign integration
-
+            # Replace with actual DocuSign Integration
             fake_envelope_id = f"ENV-{self.name}"
 
             self.db_set(

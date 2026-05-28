@@ -13,6 +13,7 @@
   "company",
   "branch",
   "currency",
+  "conversion_rate",
   "sales_manager_email",
   "status",
   "items_section",
@@ -68,6 +69,14 @@
    "read_only": 1
   },
   {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Conversion Rate",
+   "precision": "6",
+   "read_only": 1,
+   "default": "1"
+  },
+  {
    "fieldname": "sales_manager_email",
    "fieldtype": "Data",
    "label": "Sales Manager Email",
@@ -102,6 +111,7 @@
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "label": "Total Amount",
+   "options": "currency",
    "read_only": 1
   },
   {
@@ -125,7 +135,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-05-20 12:00:00.000000",
+ "modified": "2026-05-27 15:30:00.000000",
  "modified_by": "Administrator",
  "module": "Finhub",
  "name": "Commercial Offer",

@@ -1,86 +1,65 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "PRL-.rule_name.-.#####",
- "creation": "2026-05-13 19:38:44.400848",
+ "autoname": "FAR-.region.-.vertical.-.######",
+ "creation": "2026-05-22 00:00:00",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "rule_name",
+  "region",
   "vertical",
-  "country",
-  "minimum_qty",
-  "discount_percentage",
-  "markup_percentage",
-  "currency",
+  "assign_to",
   "priority",
   "is_active"
  ],
  "fields": [
   {
-   "fieldname": "rule_name",
-   "fieldtype": "Data",
+   "fieldname": "region",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Rule Name",
+   "label": "Region",
+   "options": "Branch",
    "reqd": 1
   },
   {
    "fieldname": "vertical",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Vertical",
-   "options": "Business Vertical"
+   "options": "Business Vertical",
+   "reqd": 1
   },
   {
-   "fieldname": "country",
+   "fieldname": "assign_to",
    "fieldtype": "Link",
-   "label": "Country",
-   "options": "Country"
+   "in_list_view": 1,
+   "label": "Assign To",
+   "options": "User",
+   "reqd": 1
   },
   {
-   "default": "0",
-   "fieldname": "minimum_qty",
-   "fieldtype": "Int",
-   "label": "Minimum Quantity"
-  },
-  {
-   "default": "0",
-   "fieldname": "discount_percentage",
-   "fieldtype": "Percent",
-   "label": "Discount %"
-  },
-  {
-   "default": "0",
-   "fieldname": "markup_percentage",
-   "fieldtype": "Percent",
-   "label": "Markup %"
-  },
-  {
-   "fieldname": "currency",
-   "fieldtype": "Link",
-   "label": "Currency",
-   "options": "Currency"
-  },
-  {
-   "default": "1",
+   "default": "Medium",
    "fieldname": "priority",
-   "fieldtype": "Int",
-   "label": "Priority"
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nLow\nMedium\nHigh"
   },
   {
    "default": "1",
    "fieldname": "is_active",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Is Active"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-27 15:04:39.545829",
+ "modified": "2026-05-22 16:14:32.914741",
  "modified_by": "Administrator",
  "module": "Finhub",
- "name": "Pricing Rule Logic",
+ "name": "FinHub Assignment Rule",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -95,6 +74,11 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Sales User"
   }
  ],
  "row_format": "Dynamic",

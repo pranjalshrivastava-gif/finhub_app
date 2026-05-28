@@ -10,35 +10,40 @@ frappe.ui.form.on('Commercial Offer', {
             )
         ) {
 
-            frm.add_custom_button(__('Send to DocuSign'), () => {
+            frm.add_custom_button(
+                __('Send to DocuSign'),
+                () => {
 
-                frm.call('send_to_docusign')
-                    .then(response => {
+                    frm.call('send_to_docusign')
+                        .then(response => {
 
-                        if (
-                            response &&
-                            response.message &&
-                            response.message.status === 'success'
-                        ) {
+                            if (
+                                response &&
+                                response.message &&
+                                response.message.status === 'success'
+                            ) {
 
-                            frappe.show_alert({
-                                message: __('Envelope sent successfully'),
-                                indicator: 'green'
-                            });
+                                frappe.show_alert({
+                                    message: __('Envelope sent successfully'),
+                                    indicator: 'green'
+                                });
 
-                            frm.reload_doc();
+                                frm.reload_doc();
 
-                        } else {
+                            } else {
 
-                            frappe.msgprint({
-                                title: __('DocuSign Error'),
-                                indicator: 'red',
-                                message: response.message.message || __('Unknown Error')
-                            });
-                        }
-                    });
+                                frappe.msgprint({
+                                    title: __('DocuSign Error'),
+                                    indicator: 'red',
+                                    message:
+                                        response.message.message ||
+                                        __('Unknown Error')
+                                });
+                            }
+                        });
 
-            }).addClass('btn-primary');
+                }
+            ).addClass('btn-primary');
         }
 
         if (frm.doc.docusign_envelope_id) {
@@ -76,10 +81,12 @@ frappe.ui.form.on('Commercial Offer', {
     },
 
     vertical: function(frm) {
+
         trigger_server_recalc(frm);
     },
 
     country: function(frm) {
+
         trigger_server_recalc(frm);
     }
 });
@@ -108,6 +115,15 @@ frappe.ui.form.on('Offer Line Item', {
                     r.message.base_price !== undefined
                 ) {
 
+                    // STORE MASTER INR VALUE
+                    frappe.model.set_value(
+                        cdt,
+                        cdn,
+                        'base_rate_inr',
+                        r.message.base_price
+                    );
+
+                    // TEMP DISPLAY VALUE
                     frappe.model.set_value(
                         cdt,
                         cdn,
@@ -122,21 +138,47 @@ frappe.ui.form.on('Offer Line Item', {
                         r.message.base_price
                     );
 
-                    calculate_row_amount(frm, cdt, cdn);
+                    calculate_row_amount(
+                        frm,
+                        cdt,
+                        cdn
+                    );
+
+                    // RECALCULATE AFTER VALUES SAVED
+                    setTimeout(() => {
+
+                        trigger_server_recalc(frm);
+
+                    }, 200);
                 }
             }
         });
     },
 
     qty: function(frm, cdt, cdn) {
-        calculate_row_amount(frm, cdt, cdn);
+
+        calculate_row_amount(
+            frm,
+            cdt,
+            cdn
+        );
+
+        trigger_server_recalc(frm);
     },
 
     rate: function(frm, cdt, cdn) {
-        calculate_row_amount(frm, cdt, cdn);
+
+        calculate_row_amount(
+            frm,
+            cdt,
+            cdn
+        );
+
+        trigger_server_recalc(frm);
     },
 
     items_remove: function(frm) {
+
         trigger_server_recalc(frm);
     }
 });
@@ -147,6 +189,7 @@ function calculate_row_amount(frm, cdt, cdn) {
     let row = locals[cdt][cdn];
 
     let qty = flt(row.qty);
+
     let rate = flt(row.rate);
 
     let amount = qty * rate;
@@ -157,16 +200,20 @@ function calculate_row_amount(frm, cdt, cdn) {
         'amount',
         amount
     );
-
-    trigger_server_recalc(frm);
 }
 
 
 function trigger_server_recalc(frm) {
 
-    if (!frm.doc.items || frm.doc.items.length === 0) {
+    if (
+        !frm.doc.items ||
+        frm.doc.items.length === 0
+    ) {
 
-        frm.set_value('total_amount', 0);
+        frm.set_value(
+            'total_amount',
+            0
+        );
 
         return;
     }
@@ -180,13 +227,13 @@ function trigger_server_recalc(frm) {
                 return;
             }
 
-            // Total Amount
+            // TOTAL
             frm.set_value(
                 'total_amount',
                 flt(r.message.total_amount)
             );
 
-            // Currency
+            // CURRENCY
             if (r.message.currency) {
 
                 frm.set_value(
@@ -195,7 +242,7 @@ function trigger_server_recalc(frm) {
                 );
             }
 
-            // Company
+            // COMPANY
             if (r.message.company) {
 
                 frm.set_value(
@@ -204,7 +251,7 @@ function trigger_server_recalc(frm) {
                 );
             }
 
-            // Branch
+            // BRANCH
             if (r.message.branch) {
 
                 frm.set_value(
@@ -213,7 +260,7 @@ function trigger_server_recalc(frm) {
                 );
             }
 
-            // Sales Manager Email
+            // SALES MANAGER
             if (r.message.sales_manager_email) {
 
                 frm.set_value(
@@ -222,7 +269,16 @@ function trigger_server_recalc(frm) {
                 );
             }
 
-            // Refresh Updated Item Rates
+            // CONVERSION RATE
+            if (r.message.conversion_rate) {
+
+                frm.set_value(
+                    'conversion_rate',
+                    r.message.conversion_rate
+                );
+            }
+
+            // UPDATE ITEMS
             if (r.message.items) {
 
                 r.message.items.forEach(updated_row => {
@@ -235,8 +291,14 @@ function trigger_server_recalc(frm) {
 
                     if (row) {
 
-                        row.rate = updated_row.rate;
-                        row.amount = updated_row.amount;
+                        row.base_rate =
+                            updated_row.base_rate;
+
+                        row.rate =
+                            updated_row.rate;
+
+                        row.amount =
+                            updated_row.amount;
                     }
                 });
 
@@ -244,10 +306,16 @@ function trigger_server_recalc(frm) {
             }
 
             frm.refresh_field('total_amount');
+
             frm.refresh_field('currency');
+
             frm.refresh_field('company');
+
             frm.refresh_field('branch');
+
             frm.refresh_field('sales_manager_email');
+
+            frm.refresh_field('conversion_rate');
         }
     });
 }

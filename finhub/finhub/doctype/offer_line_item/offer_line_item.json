@@ -8,6 +8,7 @@
  "field_order": [
   "finhub_module",
   "qty",
+  "base_rate_inr",
   "base_rate",
   "rate",
   "amount"
@@ -30,29 +31,38 @@
    "reqd": 1
   },
   {
+   "fieldname": "base_rate_inr",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Base Rate INR"
+  },
+  {
    "fieldname": "base_rate",
    "fieldtype": "Currency",
    "label": "Base Rate",
+   "options": "currency",
    "read_only": 1
   },
   {
    "fieldname": "rate",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Final Rate"
+   "label": "Final Rate",
+   "options": "currency"
   },
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Amount",
+   "options": "currency",
    "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "istable": 1,
  "links": [],
- "modified": "2026-05-20 12:00:00.000000",
+ "modified": "2026-05-27 16:10:00.000000",
  "modified_by": "Administrator",
  "module": "Finhub",
  "name": "Offer Line Item",

@@ -12,3 +12,26 @@ doc_events = {
         "on_submit": "finhub.api.automation.auto_create_ticket"
     }
 }
+
+# ============================================
+# FinHub Automation
+# ============================================
+
+doc_events = {
+    "FinHub Lead": {
+        "after_insert": "finhub.automation.lead_automation.assign_lead"
+    },
+    "FinHub Ticket": {
+        "after_insert": "finhub.automation.ticket_automation.assign_ticket"
+    }
+}
+
+scheduler_events = {
+    "hourly": []
+}
+fixtures = [
+    {
+        "dt": "DocType",
+        "filters": [["name", "=", "Business Vertical"]]
+    }
+]
